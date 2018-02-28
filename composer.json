@@ -21,7 +21,15 @@
     "tymon/jwt-auth": "^1.0@dev",
     "zizaco/entrust": "5.2.x-dev"
   },
+  "repositories": [
+    {
+        "type": "composer",
+        "url": "https://packagist.org"
+    },
+    { "packagist": false }
+],
   "require-dev": {
+    "appzcoder/crud-generator": "^3.0",
     "barryvdh/laravel-debugbar": "^3.0",
     "barryvdh/laravel-ide-helper": "^2.3",
     "filp/whoops": "~2.0",
