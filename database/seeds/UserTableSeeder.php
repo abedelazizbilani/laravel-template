@@ -34,10 +34,10 @@ class UserTableSeeder extends Seeder
         //external
         $admin = new User();
         $admin->id = 2;
-        $admin->email = 'youssef.jradeh@ideatolife.me';
+        $admin->email = 'test@example.com';
         $admin->password = Hash::make('admin2471_5ayech');
-        $admin->name = 'Youssef Jradeh';
-        $admin->username = 'youssef.jradeh@ideatolife.me';
+        $admin->name = 'Test User';
+        $admin->username = 'test@example.com';
         $admin->active = 1;
         $admin->save();
 

@@ -28,10 +28,12 @@ class CreateBasicTables extends BaseMigration
             function (Blueprint $table) {
                 $table->bigIncrements('id');
                 $table->string('username', 100)->unique();
-                $table->string('name', 100);
                 $table->string('password', 60);
-                $table->boolean('active')->default(false);
                 $table->string('email')->nullable();
+                $table->string('name')->nullable();
+                $table->string('phone')->nullable();
+                $table->string('job_type')->nullable();
+                $table->boolean('active')->default(false);
                 //used to make handle changing password or signing out from other devices
                 $table->string('jwt_sign', 100)->nullable();
                 // Email verification
@@ -42,6 +44,7 @@ class CreateBasicTables extends BaseMigration
                 $table->string('password_change_code', 100)->nullable();
                 $table->dateTime('password_change_expiry')->nullable();
                 $table->dateTime('password_changed_at')->nullable();
+                $table->unsignedBigInteger('district_id')->nullable();
                 $table->softDeletes();
                 $table->timestamps();
             }

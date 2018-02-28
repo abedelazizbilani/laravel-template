@@ -11,7 +11,7 @@ class CreateNotificationsTable extends \App\Base\BaseMigration
             'notifications', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('code')->unique();
-            $table->json('keys')->nullable();
+            $table->string('keys')->nullable();
 
             $table->string('title')->translate();
             $table->text('sms_body')->translate();
