@@ -1,60 +1,53 @@
 @extends('back.layout')
+
+@section('css')
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/sweetalert2/6.3.8/sweetalert2.min.css">
+    <style>
+        input, th span {
+            cursor: pointer;
+        }
+    </style>
+@endsection
+
+@section('button')
+    <a href="{{ route('posts.create') }}" class="btn btn-primary">@lang('New post')</a>
+@endsection
+<form method="GET" action="{{ url('/dashboard/posts') }}" accept-charset="UTF-8" class="navbar-form navbar-right" role="search">
+    <div class="input-group">
+        <input type="text" class="form-control" name="search" placeholder="Search..." value="{{ request('search') }}">
+        <span class="input-group-btn">
+            <button class="btn btn-default" type="submit">
+                <i class="fa fa-search"></i>
+            </button>
+        </span>
+    </div>
+</form>
 @section('main')
-    <div class="container">
-        <div class="row">
-            <div class="col-md-9">
-                <div class="panel panel-default">
-                    <div class="panel-heading">Posts</div>
-                    <div class="panel-body">
-                        <a href="{{ url('/dashboard/posts/create') }}" class="btn btn-success btn-sm" title="Add New post">
-                            <i class="fa fa-plus" aria-hidden="true"></i> Add New
-                        </a>
-
-                        <form method="GET" action="{{ url('/dashboard/posts') }}" accept-charset="UTF-8" class="navbar-form navbar-right" role="search">
-                            <div class="input-group">
-                                <input type="text" class="form-control" name="search" placeholder="Search..." value="{{ request('search') }}">
-                                <span class="input-group-btn">
-                                    <button class="btn btn-default" type="submit">
-                                        <i class="fa fa-search"></i>
-                                    </button>
-                                </span>
-                            </div>
-                        </form>
-
-                        <br/>
-                        <br/>
-                        <div class="table-responsive">
-                            <table class="table table-borderless">
-                                <thead>
-                                    <tr>
-                                        <th>#</th><th>Title</th><th>Body</th><th>Actions</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                @foreach($posts as $item)
-                                    <tr>
-                                        <td>{{ $loop->iteration or $item->id }}</td>
-                                        <td>{{ $item->title }}</td><td>{{ $item->body }}</td>
-                                        <td>
-                                            <a href="{{ url('/dashboard/posts/' . $item->id) }}" title="View post"><button class="btn btn-info btn-xs"><i class="fa fa-eye" aria-hidden="true"></i> View</button></a>
-                                            <a href="{{ url('/dashboard/posts/' . $item->id . '/edit') }}" title="Edit post"><button class="btn btn-primary btn-xs"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a>
-
-                                            <form method="POST" action="{{ url('/dashboard/posts' . '/' . $item->id) }}" accept-charset="UTF-8" style="display:inline">
-                                                {{ method_field('DELETE') }}
-                                                {{ csrf_field() }}
-                                                <button type="submit" class="btn btn-danger btn-xs" title="Delete post" onclick="return confirm(&quot;Confirm delete?&quot;)"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</button>
-                                            </form>
-                                        </td>
-                                    </tr>
-                                @endforeach
-                                </tbody>
-                            </table>
-                            <div class="pagination-wrapper"> {!! $posts->appends(['search' => Request::get('search')])->render() !!} </div>
-                        </div>
-
-                    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="box">
+                <div class="box-body table-responsive">
+                    <table id="dashboard/" class="table table-striped table-bordered">
+                        <thead>
+                            <tr>
+                            <tfoot>
+                                <th>#</th><th>Title</th><th>Body</th><th>Actions</th>
+                            </tr>
+                            </tfoot>
+                        </thead>
+                        <tbody id="pannel">
+                             {{--@include('back.posts.table', compact('posts'))--}}
+                        </tbody>
+                    </table>
+                </div>
+                <!-- /.box-body -->
+                <div id="pagination" class="box-footer">
+                    {{--{{ $links }}--}}
                 </div>
             </div>
+            <!-- /.box -->
         </div>
+        <!-- /.col -->
     </div>
+    <!-- /.row -->
 @endsection

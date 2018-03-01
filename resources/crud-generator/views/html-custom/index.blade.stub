@@ -10,7 +10,7 @@
 @endsection
 
 @section('button')
-    <a href="{{ route('%%routeGroup%%%%viewName%%.create') }}" class="btn btn-primary">@lang('New %%modelName%%')</a>
+    <a href="{{ route('%%viewName%%.create') }}" class="btn btn-primary">@lang('New %%modelName%%')</a>
 @endsection
 <form method="GET" action="{{ url('/%%routeGroup%%%%viewName%%') }}" accept-charset="UTF-8" class="navbar-form navbar-right" role="search">
     <div class="input-group">
@@ -36,7 +36,7 @@
                             </tfoot>
                         </thead>
                         <tbody id="pannel">
-                             @include('back.%%routeGroup%%.table', compact('%%routeGroup%%'))
+                             @include('back.%%viewName%%.table', compact('%%viewName%%'))
                         </tbody>
                     </table>
                 </div>

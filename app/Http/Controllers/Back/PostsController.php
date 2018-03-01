@@ -4,10 +4,12 @@ namespace App\Http\Controllers\Back;
 
 use App\Base\BaseController;
 use App\Models\Post;
+use App\Traits\Indexable;
 use Illuminate\Http\Request;
 
 class PostsController extends BaseController
 {
+    use Indexable;
     /**
      * Display a listing of the resource.
      *

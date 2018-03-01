@@ -1,36 +1,30 @@
 @extends('back.layout')
-
 @section('main')
-    <div class="container">
-        <div class="row">
-            @include('admin.sidebar')
-
-            <div class="col-md-9">
-                <div class="panel panel-default">
-                    <div class="panel-heading">Create New post</div>
-                    <div class="panel-body">
-                        <a href="{{ url('/dashboard/posts') }}" title="Back"><button class="btn btn-warning btn-xs"><i class="fa fa-arrow-left" aria-hidden="true"></i> Back</button></a>
-                        <br />
-                        <br />
-
-                        @if ($errors->any())
-                            <ul class="alert alert-danger">
-                                @foreach ($errors->all() as $error)
-                                    <li>{{ $error }}</li>
-                                @endforeach
-                            </ul>
-                        @endif
-
-                        <form method="POST" action="{{ url('/dashboard/posts') }}" accept-charset="UTF-8" class="form-horizontal" enctype="multipart/form-data">
-                            {{ csrf_field() }}
-
-                            @include ('back.posts.form')
-
-                        </form>
-
-                    </div>
-                </div>
-            </div>
+    <div class="row">
+        <!-- left column -->
+        <div class="col-md-12">
+            @if (session('%%crudNameSingular%%-updated'))
+                @component('back.components.alert')
+                    @slot('type')
+                        success
+                    @endslot
+                    {!! session('%%crudNameSingular%%-updated') !!}
+                @endcomponent
+            @endif
         </div>
     </div>
+   {!! Form::open(['route' => 'dashboard/.store', 'method' => 'POST']) !!}
+      <div class="box box-primary">
+           <div class="box-body">
+               <div class="row">
+                   <div class="col-md-4">
+                        %%wrapFieldsHtml%%
+                   </div>
+               </div>
+           </div>
+       </div>
+       <div class="box-footer text-right">
+           {{ Form::submit('Submit') }}
+       </div>
+   {!! Form::close() !!}
 @endsection
