@@ -52,39 +52,51 @@ Route::prefix('dashboard')->namespace('Back')->group(function () {
 
     // Users
     Route::name('users.valid')->put('users/valid/{user}', 'UserController@updateValid');
-    Route::resource('users', 'UserController', ['middleware' => ['permission:manage_users'], 'only' => [
-            'index', 'edit', 'update', 'destroy', 'create', 'store'
-        ]]
+    Route::resource('users', 'UserController', [
+            'middleware' => ['permission:manage_users'], 'only' => [
+                'index', 'edit', 'update', 'destroy', 'create', 'store'
+            ]
+        ]
     );
 
     //Roles
-    Route::resource('roles', 'RoleController', ['middleware' => ['permission:manage_roles'], 'only' => [
-            'index', 'edit', 'update', 'destroy', 'create', 'store'
-        ]]
+    Route::resource('roles', 'RoleController', [
+            'middleware' => ['permission:manage_roles'], 'only' => [
+                'index', 'edit', 'update', 'destroy', 'create', 'store'
+            ]
+        ]
     );
 
     //Profiles
-    Route::resource('profiles', 'ProfileController', ['only' => [
-            'edit', 'update'
-        ]]
+    Route::resource('profiles', 'ProfileController', [
+            'only' => [
+                'edit', 'update'
+            ]
+        ]
     );
 
     //FeedBacks
-    Route::resource('feedbacks', 'FeedBackController', ['middleware' => ['permission:manage_feedbacks'], 'only' => [
-            'index', 'destroy'
-        ]]
+    Route::resource('feedbacks', 'FeedBackController', [
+            'middleware' => ['permission:manage_feedbacks'], 'only' => [
+                'index', 'destroy'
+            ]
+        ]
     );
 
     //Devices
-    Route::resource('devices', 'DeviceController', ['only' => [
-            'index'
-        ]]
+    Route::resource('devices', 'DeviceController', [
+            'only' => [
+                'index'
+            ]
+        ]
     );
 
     //audit
-    Route::resource('audit', 'DeviceController', ['only' => [
-            'index'
-        ]]
+    Route::resource('audit', 'DeviceController', [
+            'only' => [
+                'index'
+            ]
+        ]
     );
     //notifications
     Route::resource('notifications', 'DeviceController');
@@ -97,5 +109,7 @@ Route::prefix('dashboard')->namespace('Back')->group(function () {
 
     //configurations
     Route::name('configurations')->get('/configurations', 'DashboardController@index');
+
+    Route::resource('posts', 'PostsController');
 
 });

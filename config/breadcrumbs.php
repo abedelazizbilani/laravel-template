@@ -53,5 +53,10 @@ return [
         [
             'name' => 'devices',
             'url' => '/dashboard/devices',
+        ],
+    'posts' =>
+        [
+            'name' => 'posts',
+            'url' => '/dashboard/posts',
         ]
 ];

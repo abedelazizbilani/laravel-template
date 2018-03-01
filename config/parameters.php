@@ -18,6 +18,10 @@ return [
     'devices' => [
         'order' => 'created_at',
         'direction' => 'desc',
+    ],
+    'posts' => [
+        'order' => 'created_at',
+        'direction' => 'desc',
     ]
 
 ];
