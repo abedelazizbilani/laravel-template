@@ -13,12 +13,12 @@
             @endif
         </div>
     </div>
-   {!! Form::open(['route' => 'dashboard/.store', 'method' => 'POST']) !!}
+   {!! Form::open(['route' => 'posts.store', 'method' => 'POST']) !!}
       <div class="box box-primary">
            <div class="box-body">
                <div class="row">
                    <div class="col-md-4">
-                        %%wrapFieldsHtml%%
+                       @include ('back.posts.form')
                    </div>
                </div>
            </div>

@@ -36,13 +36,13 @@
                             </tfoot>
                         </thead>
                         <tbody id="pannel">
-                             {{--@include('back.posts.table', compact('posts'))--}}
+                             @include('back.posts.table', compact('posts'))
                         </tbody>
                     </table>
                 </div>
                 <!-- /.box-body -->
                 <div id="pagination" class="box-footer">
-                    {{--{{ $links }}--}}
+{{--                    {{ $links }}--}}
                 </div>
             </div>
             <!-- /.box -->
