@@ -12,16 +12,6 @@
 @section('button')
     <a href="{{ route('posts.create') }}" class="btn btn-primary">@lang('New post')</a>
 @endsection
-<form method="GET" action="{{ url('/dashboard/posts') }}" accept-charset="UTF-8" class="navbar-form navbar-right" role="search">
-    <div class="input-group">
-        <input type="text" class="form-control" name="search" placeholder="Search..." value="{{ request('search') }}">
-        <span class="input-group-btn">
-            <button class="btn btn-default" type="submit">
-                <i class="fa fa-search"></i>
-            </button>
-        </span>
-    </div>
-</form>
 @section('main')
     <div class="row">
         <div class="col-md-12">
@@ -39,7 +29,7 @@
         <div class="col-md-12">
             <div class="box">
                 <div class="box-body table-responsive">
-                    <table id="dashboard/" class="table table-striped table-bordered">
+                    <table id="posts" class="table table-striped table-bordered">
                         <thead>
                             <tr>
                                 <th>#</th><th>Title</th><th>Body</th><th>Actions</th>
@@ -49,10 +39,6 @@
                              @include('back.posts.table', compact('posts'))
                         </tbody>
                     </table>
-                </div>
-                <!-- /.box-body -->
-                <div id="pagination" class="box-footer">
-                    {{ $links }}
                 </div>
             </div>
             <!-- /.box -->
@@ -65,9 +51,7 @@
 @section('js')
     <script src="/adminlte/js/back.js"></script>
     <script>
-
         var post = (function () {
-
             var url = '{{ route('posts.index') }}'
             var swalTitle = '@lang('Really destroy post ?')'
             var confirmButtonText = '@lang('Yes')'
@@ -97,8 +81,14 @@
             }
 
         })()
-
         $(document).ready(post.onReady)
-
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var table = $('#posts').DataTable({
+                "pageLength": 10
+            });
+            $('#posts').removeClass('display').addClass('table table-striped table-bordered');
+        });
     </script>
 @endsection

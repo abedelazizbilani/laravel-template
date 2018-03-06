@@ -1,5 +1,6 @@
 @extends('back.layout')
 @section('css')
+@endsection
 
 @section('main')
      <div class="panel-body">

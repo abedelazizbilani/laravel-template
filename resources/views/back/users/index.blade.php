@@ -12,7 +12,6 @@
     <a href="{{ route('users.create') }}" class="btn btn-primary">@lang('New User')</a>
 @endsection
 @section('main')
-
     <div class="row">
         <div class="col-md-12">
             <div class="box">
@@ -34,27 +33,12 @@
                             <th></th>
                         </tr>
                         </thead>
-                        <tfoot>
-                        <tr>
-                            <th>#</th>
-                            <th>@lang('Name')</th>
-                            <th>@lang('Username')</th>
-                            <th>@lang('Email')</th>
-                            <th>@lang('Role')</th>
-                            <th>@lang('Creation')</th>
-                            <th></th>
-                            <th></th>
-                        </tr>
-                        </tfoot>
                         <tbody id="pannel">
                         @include('back.users.table', compact('users'))
                         </tbody>
                     </table>
                 </div>
                 <!-- /.box-body -->
-                <div id="pagination" class="box-footer">
-                    {{ $links }}
-                </div>
             </div>
             <!-- /.box -->
         </div>
@@ -77,9 +61,6 @@
             var errorAjax = '@lang('Looks like there is a server issue...')'
 
             var onReady = function () {
-                $('#pagination').on('click', 'ul.pagination a', function (event) {
-                    back.pagination(event, $(this), errorAjax)
-                })
                 $('#pannel').on('change', ':checkbox[name="seen"]', function () {
                     back.seen(url, $(this), errorAjax)
                 })
@@ -102,5 +83,14 @@
 
         $(document).ready(user.onReady)
 
+    </script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var table = $('#users').DataTable({
+                "pageLength": 10
+            });
+            $('#users').removeClass('display').addClass('table table-striped table-bordered');
+        });
     </script>
 @endsection

@@ -13,9 +13,9 @@ class PostRepository
      * @param  array $parameters
      * @return \Illuminate\Contracts\Pagination\LengthAwarePaginator
      */
-    public function getAll($nbrPages, $parameters)
+    public function getAll($parameters)
     {
         return Post::orderBy($parameters['order'], $parameters['direction'])
-            ->paginate($nbrPages);
+            ->get();
     }
 }

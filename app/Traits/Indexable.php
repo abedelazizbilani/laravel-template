@@ -32,18 +32,16 @@ trait Indexable
         $parameters = $this->getParameters($request);
 
         // Get records and generate links for pagination
-        $records = $this->repository->getAll(env('PAGINATION_PER_PAGE'), $parameters);
-        $links   = $records->appends($parameters)->links('back.pagination');
+        $records = $this->repository->getAll($parameters);
 
         // Ajax response
         if ($request->ajax()) {
             return response()->json([
-                'table'      => view("back.$this->table.table", [$this->table => $records])->render(),
-                'pagination' => $links->toHtml(),
+                'table' => view("back.$this->table.table", [$this->table => $records])->render(),
             ]);
         }
 
-        return view("back.$this->table.index", [$this->table => $records, 'links' => $links]);
+        return view("back.$this->table.index", [$this->table => $records]);
     }
 
     /**

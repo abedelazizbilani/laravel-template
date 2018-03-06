@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="/adminlte/css/skins/skin-blue.min.css">
     <!-- Bootstrap 4.0.0 -->
     <link rel="stylesheet" href="/css/app.css">
-
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/r/bs-3.3.5/jq-2.1.4,dt-1.10.8/datatables.min.css"/>
 @yield('css')
 
 <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -254,10 +254,13 @@ desired effect
 <!-- Sweet Alert -->
 <script src="//cdn.jsdelivr.net/sweetalert2/6.3.8/sweetalert2.min.js"></script>
 
+<script type="text/javascript" src="https://cdn.datatables.net/r/bs-3.3.5/jqc-1.11.3,dt-1.10.8/datatables.min.js"></script>
+
 @yield('js')
 
 <!-- AdminLTE App -->
 <script src="/adminlte/js/app.min.js"></script>
+
 
 {{--we will use this in case fetching data --}}
 {{--
