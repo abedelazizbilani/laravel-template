@@ -3882,7 +3882,7 @@ tbody.collapse.show {
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
-  display: flex;
+  display: block;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   -webkit-box-align: center;

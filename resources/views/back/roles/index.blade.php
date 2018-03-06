@@ -24,34 +24,19 @@
                             <th>@lang('Name')<span id="name" class="fa fa-sort pull-right"
                                                    aria-hidden="true"></span></th>
                             <th>@lang('Display Name')<span id="display_name" class="fa fa-sort pull-right"
-                                                         aria-hidden="true"></span></th>
+                                                           aria-hidden="true"></span></th>
                             <th>@lang('Description')<span id="description" class="fa fa-sort pull-right"
-                                                         aria-hidden="true"></span></th>
+                                                          aria-hidden="true"></span></th>
                             <th>@lang('creation')<span id="email" class="fa fa-sort pull-right"
                                                        aria-hidden="true"></span></th>
                             <th></th>
                             <th></th>
                         </tr>
                         </thead>
-                        <tfoot>
-                        <tr>
-                            <th>#</th>
-                            <th>@lang('Name')</th>
-                            <th>@lang('Display Name')</th>
-                            <th>@lang('Description')</th>
-                            <th>@lang('creation')</th>
-                            <th></th>
-                            <th></th>
-                        </tr>
-                        </tfoot>
                         <tbody id="pannel">
                         @include('back.roles.table', compact('roles'))
                         </tbody>
                     </table>
-                </div>
-                <!-- /.box-body -->
-                <div id="pagination" class="box-footer">
-                    {{ $links }}
                 </div>
             </div>
             <!-- /.box -->
@@ -73,11 +58,7 @@
             var confirmButtonText = '@lang('Yes')'
             var cancelButtonText = '@lang('No')'
             var errorAjax = '@lang('Looks like there is a server issue...')'
-
             var onReady = function () {
-                $('#pagination').on('click', 'ul.pagination a', function (event) {
-                    back.pagination(event, $(this), errorAjax)
-                })
                 $('#pannel').on('change', ':checkbox[name="seen"]', function () {
                     back.seen(url, $(this), errorAjax)
                 })
@@ -99,6 +80,14 @@
         })()
 
         $(document).ready(role.onReady)
+    </script>
 
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var table = $('#roles').DataTable({
+                "pageLength": 10
+            });
+            $('#roles').removeClass('display').addClass('table table-striped table-bordered');
+        });
     </script>
 @endsection
