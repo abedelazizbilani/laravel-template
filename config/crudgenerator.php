@@ -59,7 +59,7 @@ return [
         'form'   => ['formFieldsHtml'],
         'table'  => ['crudName', 'viewName', 'formBodyHtml'],
         'create' => ['crudName', 'crudNameCap', 'modelName', 'modelNameCap', 'viewName', 'routeGroup', 'viewTemplateDir'],
-        'edit'   => ['crudName', 'crudNameSingular', 'crudNameCap', 'modelNameCap', 'modelName', 'viewName', 'routeGroup', 'primaryKey', 'viewTemplateDir'],
+        'edit'   => ['crudName', 'crudNameSingular', 'crudNameCap', 'modelNameCap', 'modelName', 'viewName', 'routeGroup', 'primaryKey', 'viewTemplateDir' , 'formFieldsHtml'],
         'show'   => ['formHeadingHtml', 'formBodyHtml', 'formBodyHtmlForShowView', 'crudName', 'crudNameSingular', 'crudNameCap', 'modelName', 'viewName', 'routeGroup', 'primaryKey'],
         /*
          * Add new stubs templates here if you need to, like action, datatable...

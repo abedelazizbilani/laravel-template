@@ -10,48 +10,45 @@ return [
     | Set Titles for each admin routes names
     */
 
-    'admin' => 'dashboard',
-    'users' => [
+    'admin'         => 'dashboard',
+    'users'         => [
         'index' => 'usersGestion',
-        'edit' => 'userEdit',
+        'edit'  => 'userEdit',
     ],
-    'roles' => [
-        'index' => 'rolesGestion',
-        'edit' => 'roleEdit',
+    'roles'         => [
+        'index'  => 'rolesGestion',
+        'edit'   => 'roleEdit',
         'create' => 'roleCreate',
     ],
-    'contacts' => [
+    'contacts'      => [
         'index' => 'contactsGestion',
     ],
-    'posts' => [
-        'index' => 'postsGestion',
-        'edit' => 'postEdit',
+    'posts'         => [
+        'index'  => 'postsGestion',
+        'edit'   => 'postEdit',
         'create' => 'postCreate',
-        'show' => 'postShow',
+        'show'   => 'postShow',
     ],
     'notifications' => [
         'index' => 'notificationsGestion',
     ],
-    'comments' => [
+    'comments'      => [
         'index' => 'commentsGestion',
     ],
-    'medias' => [
+    'medias'        => [
         'index' => 'mediasGestion',
     ],
-    'settings' => [
+    'settings'      => [
         'edit' => 'settings',
     ],
-    'profiles' => [
+    'profiles'      => [
         'edit' => 'profileEdit',
     ],
-    'devices' => [
+    'devices'       => [
         'index' => 'devicesGestion',
     ],
-    'feedbacks' => [
+    'feedbacks'     => [
         'index' => 'feedbacksGestion',
-    ],
-    'posts' => [
-        'index' => 'postsGestion',
     ],
 
 ];

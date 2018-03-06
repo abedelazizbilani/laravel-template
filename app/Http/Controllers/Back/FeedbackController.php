@@ -30,11 +30,6 @@ class FeedbackController extends BaseController
         $this->table = 'feedbacks';
     }
 
-//    public function allFeedback()
-//    {
-//        return $this->successData(Feedbacks::all());
-//    }
-
     public function feedbackById()
     {
         $feed = Feedbacks::byId(request('id'))->first();
