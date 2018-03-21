@@ -39,6 +39,10 @@ $this->get('password/reset', 'Auth\ResetPasswordController@showLinkRequestForm')
 $this->post('password/reset', 'Auth\ResetPasswordController@resetPassword')->name('password.reset');
 $this->get('password/confirm', 'Auth\ResetPasswordController@showConfirmCodeForm')->name('password.confirm');
 $this->post('password/confirm', 'Auth\ResetPasswordController@confirmPassword')->name('password.confirm');
+
+Route::get('/redirect', 'FacebookAuthController@redirect');
+Route::get('/callback', 'FacebookAuthController@callback');
+
 /*
 |--------------------------------------------------------------------------
 | Backend

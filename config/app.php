@@ -182,6 +182,7 @@ return [
          * HTML
          */
         Collective\Html\HtmlServiceProvider::class,
+        Laravel\Socialite\SocialiteServiceProvider::class,
     ],
 
     /*
@@ -234,6 +235,7 @@ return [
         'JWTAuth'      => Tymon\JWTAuth\Facades\JWTAuth::class,
         'Form'         => Collective\Html\FormFacade::class,
         'Html'         => Collective\Html\HtmlFacade::class,
+        'SocialLogin'  => Laravel\Socialite\Facades\Socialite::class,
     ],
 
     /*

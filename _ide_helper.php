@@ -14388,6 +14388,10 @@ namespace {
     {
     }
 
+    class SocialLogin extends Laravel\Socialite\Facades\Socialite
+    {
+
+    }
 }
 
 
