@@ -14387,11 +14387,6 @@ namespace {
     class Image extends \Intervention\Image\Facades\Image
     {
     }
-
-    class SocialLogin extends Laravel\Socialite\Facades\Socialite
-    {
-
-    }
 }
 
 

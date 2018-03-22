@@ -40,8 +40,8 @@ $this->post('password/reset', 'Auth\ResetPasswordController@resetPassword')->nam
 $this->get('password/confirm', 'Auth\ResetPasswordController@showConfirmCodeForm')->name('password.confirm');
 $this->post('password/confirm', 'Auth\ResetPasswordController@confirmPassword')->name('password.confirm');
 
-Route::get('/redirect', 'FacebookAuthController@redirect');
-Route::get('/callback', 'FacebookAuthController@callback');
+Route::get('/redirect', 'Auth\FacebookAuthController@redirect');
+Route::get('/callback', 'Auth\FacebookAuthController@callback');
 
 /*
 |--------------------------------------------------------------------------
