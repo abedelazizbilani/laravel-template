@@ -2,9 +2,9 @@
 
 namespace App\Repositories;
 
-use App\Models\Feedbacks;
+use App\Models\Post;
 
-class FeedBacksRepository
+class PostRepository
 {
     /**
      * Get roles collection paginate.
@@ -15,7 +15,7 @@ class FeedBacksRepository
      */
     public function getAll($parameters)
     {
-        return Feedbacks::orderBy($parameters['order'], $parameters['direction'])
+        return Post::orderBy($parameters['order'], $parameters['direction'])
             ->get();
     }
 }

@@ -4,31 +4,25 @@ namespace App\Http\Controllers\Back;
 
 use App\Base\BaseController;
 use App\Models\Post;
+use App\Repositories\PostRepository;
 use App\Traits\Indexable;
 use Illuminate\Http\Request;
 
 class PostsController extends BaseController
 {
     use Indexable;
+
     /**
-     * Display a listing of the resource.
+     * Create a new UserController instance.
      *
-     * @return \Illuminate\View\View
+     * @param  \App\Repositories\UserRepository $repository
      */
-    public function index(Request $request)
+    public function __construct(PostRepository $repository)
     {
-        $keyword = $request->get('search');
-        $perPage = 25;
+        $this->repository = $repository;
 
-        if (!empty($keyword)) {
-            $posts = Post::paginate($perPage);
-        } else {
-            $posts = Post::paginate($perPage);
-        }
-
-        return view('back.posts.index', compact('posts'));
+        $this->table = 'posts';
     }
-
     /**
      * Show the form for creating a new resource.
      *
@@ -99,21 +93,18 @@ class PostsController extends BaseController
         
         $post = Post::findOrFail($id);
         $post->update($requestData);
-
-        return redirect('dashboard/posts')->with('flash_message', 'Post updated!');
+        return redirect('dashboard/posts')->with('post-updated', __('The user has been successfully updated'));
     }
 
     /**
      * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     *
-     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     * @param Post $post
+     * @return mixed
+     * @throws
      */
-    public function destroy($id)
+    public function destroy(Post $post)
     {
-        Post::destroy($id);
-
-        return redirect('dashboard/posts')->with('flash_message', 'Post deleted!');
+        $post->delete();
+        return response()->json();
     }
 }

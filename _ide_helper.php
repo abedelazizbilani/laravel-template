@@ -14387,7 +14387,6 @@ namespace {
     class Image extends \Intervention\Image\Facades\Image
     {
     }
-
 }
 
 

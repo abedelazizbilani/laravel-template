@@ -17,13 +17,13 @@ class UserRepository
      * @param  array $parameters
      * @return \Illuminate\Contracts\Pagination\LengthAwarePaginator
      */
-    public function getAll($nbrPages, $parameters)
+    public function getAll($parameters)
     {
         return User::orderBy($parameters['order'], $parameters['direction'])
             ->when(
                 $parameters['valid'], function ($query) {
                 $query->whereValid(true);
-            })->paginate($nbrPages);
+            })->get();
     }
 
     /**

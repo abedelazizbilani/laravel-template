@@ -48,6 +48,9 @@
                             </label>
                         </div>
                     </div>
+                    <div class="form-group">
+                            <a class="btn btn-primary btn-block" href="{{url('/redirect')}}" class="btn btn-primary">Login with Facebook</a>
+                    </div>
                     <button class="btn btn-primary btn-block" value="@lang('Login')">Login</button>
                     <br>
                     <div class="text-center">
