@@ -1,24 +1,17 @@
 @foreach($posts as $item)
     <tr>
-        <td>{{ $loop->iteration or $item->id}}</td>
+        <td>{{$item->id}}</td>
         <td>{{ $item->title }}</td><td>{{ $item->body }}</td>
-        <td>
-            <a href="{{ url('/posts/' . $item->id) }}" title="View %%modelName%%">
-                <button class="btn btn-info btn-xs">
-                    <i class="fa fa-eye" aria-hidden="true"></i> View
-                </button>
-            </a>
-            <a href="{{ url('/posts/' . $item->id . '/edit') }}" title="Edit %%modelName%%">
-                <button class="btn btn-primary btn-xs">
-                    <i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit
-                </button>
-            </a>
-
-            <a href="{{ route('posts.destroy', [$item->id]) }}" title="Delete %%modelName%%">
-                <button class="btn btn-primary btn-xs btn-danger">
-                    <i class="fa fa-remove" aria-hidden="true"></i> Delete
-                </button>
-            </a>
-         </td>
+       <td>
+           <a class="btn btn-info btn-xs" href="{{ route('posts.show', [$item->id]) }}" role="button"
+              title="@lang('Show')"><span class="fa fa-eye"></span>
+           </a>
+           <a class="btn btn-warning btn-xs" href="{{ route('posts.edit', [$item->id]) }}" role="button"
+              title="@lang('Edit')"><span class="fa fa-edit"></span>
+           </a>
+           <a class="btn btn-danger btn-xs" href="{{ route('posts.destroy', [$item->id]) }}" role="button"
+              title="@lang('Destroy')"><span class="fa fa-remove"></span>
+           </a>
+        </td>
     </tr>
 @endforeach

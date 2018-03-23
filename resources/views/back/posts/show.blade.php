@@ -1,10 +1,8 @@
-@extends('layouts.app')
+@extends('back.layout')
 
-@section('content')
+@section('main')
     <div class="container">
         <div class="row">
-            @include('admin.sidebar')
-
             <div class="col-md-9">
                 <div class="panel panel-default">
                     <div class="panel-heading">post {{ $post->id }}</div>
@@ -22,7 +20,7 @@
                         <br/>
 
                         <div class="table-responsive">
-                            <table class="table table-borderless">
+                            <table class="table table-striped table-bordered">
                                 <tbody>
                                     <tr>
                                         <th>ID</th><td>{{ $post->id }}</td>
