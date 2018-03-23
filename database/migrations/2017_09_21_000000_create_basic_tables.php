@@ -95,6 +95,9 @@ class CreateBasicTables extends BaseMigration
                 $table->date('dob')->nullable();
                 $table->integer('country_id')->nullable();
                 $table->timestamps();
+
+                $table->foreign('user_id')->references('id')->on('users')
+                    ->onUpdate('cascade')->onDelete('cascade');
             }
         );
 

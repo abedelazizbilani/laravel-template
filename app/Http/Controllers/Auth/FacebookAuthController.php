@@ -3,7 +3,8 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Base\BaseController;
-use SocialLogin;
+use App\Services\FacebookUserService;
+use Laravel\Socialite\Facades\Socialite as SocialLogin;
 
 class FacebookAuthController extends BaseController
 {
@@ -22,8 +23,10 @@ class FacebookAuthController extends BaseController
      *
      * @return callback URL from facebook
      */
-    public function callback()
+    public function callback(FacebookUserService $service)
     {
-
+        $user = $service->createOrGetUser(SocialLogin::driver('facebook')->user());
+        auth()->login($user);
+        return redirect()->to('/dashboard');
     }
 }

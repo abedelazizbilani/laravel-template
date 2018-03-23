@@ -14,11 +14,14 @@ class CreateSocialFacebookAccountsTable extends Migration
     public function up()
     {
         Schema::create('facebook_users', function (Blueprint $table) {
-            $table->increments('id');
-            $table->integer('user_id');
+            $table->bigIncrements('id');
+            $table->unsignedBigInteger('user_id');
             $table->string('provider_user_id');
             $table->string('provider');
             $table->timestamps();
+
+            $table->foreign('user_id')->references('id')->on('users')
+                ->onUpdate('cascade')->onDelete('cascade');
         });
     }
 
