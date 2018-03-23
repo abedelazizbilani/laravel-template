@@ -56,7 +56,7 @@ return [
      */
     'dynamic_view_template' => [
         'index'  => ['formHeadingHtml', 'formBodyHtml', 'crudName', 'crudNameCap', 'modelName', 'viewName', 'routeGroup', 'primaryKey'],
-//        'form'   => ['formFieldsHtml'],
+        'form'   => ['formFieldsHtml'],
         'table'  => ['crudName', 'viewName', 'formBodyHtml'],
         'create' => ['crudName', 'crudNameCap', 'modelName', 'modelNameCap', 'viewName', 'routeGroup', 'viewTemplateDir'],
         'edit'   => ['crudName', 'crudNameSingular', 'crudNameCap', 'modelNameCap', 'modelName', 'viewName', 'routeGroup', 'primaryKey', 'viewTemplateDir' , 'formFieldsHtml'],
