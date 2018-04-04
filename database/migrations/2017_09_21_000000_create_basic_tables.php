@@ -128,12 +128,12 @@ class CreateBasicTables extends BaseMigration
      */
     public function down()
     {
-        Schema::drop('languages');
-        Schema::drop('devices');
-        Schema::drop('users');
-        Schema::drop('feedbacks');
-        Schema::drop('countries');
-        Schema::drop('profiles');
-        Schema::drop('password_resets');
+        Schema::dropIfExists('languages');
+        Schema::dropIfExists('devices');
+        Schema::dropIfExists('feedbacks');
+        Schema::dropIfExists('country_translations');
+        Schema::dropIfExists('countries');
+        Schema::dropIfExists('profiles');
+        Schema::dropIfExists('password_resets');
     }
 }

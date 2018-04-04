@@ -39,7 +39,7 @@ class AuthController extends BaseController
         $this->jwt = $jwt;
     }
 
-    public function login(Request $request)
+    public function login()
     {
         $email = request('email');
         $password = request('password');

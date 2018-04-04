@@ -46,8 +46,9 @@ class CreateNotificationsTable extends \App\Base\BaseMigration
 
     public function down()
     {
-        Schema::drop('notifications');
-        Schema::drop('notification_template');
-        Schema::drop('notification_history');
+        Schema::dropIfExists('notification_translations');
+        Schema::dropIfExists('notification_template');
+        Schema::dropIfExists('notification_histories');
+        Schema::dropIfExists('notifications');
     }
 }

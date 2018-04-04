@@ -33,5 +33,6 @@ class CreateSocialFacebookAccountsTable extends Migration
     public function down()
     {
         Schema::dropIfExists('facebook_users');
+
     }
 }
