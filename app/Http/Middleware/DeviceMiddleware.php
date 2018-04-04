@@ -1,11 +1,6 @@
 <?php
 
-/*
- * This file is part of the IdeaToLife package.
- *
- * (c) Youssef Jradeh <youssef.jradeh@ideatolife.me>
- *
- */
+
 
 namespace App\Http\Middleware;
 
@@ -24,7 +19,7 @@ class DeviceMiddleware
     /**
      * Description: The following method is used to handle the incoming request for the current middleware
      *
-     * @author Youssef - I2L
+     * @author
      *
      * @param \Illuminate\Http\Request $request
      * @param \Closure $next
@@ -74,7 +69,7 @@ class DeviceMiddleware
     /**
      * Description: find Device By UUID
      *
-     * @author Youssef - I2L
+     * @author
      * @return bool|\App\Models\Device
      */
     protected function findDeviceByUUID($uuid)
@@ -117,7 +112,7 @@ class DeviceMiddleware
     /**
      * Description: Create a new Device
      *
-     * @author Youssef - I2L
+     * @author
      * @return bool|\App\Models\Device
      */
     protected function createDevice()
@@ -144,7 +139,7 @@ class DeviceMiddleware
     /**
      * Description: Update a new Device
      *
-     * @author Youssef - I2L
+     * @author
      *
      * @param $device
      *

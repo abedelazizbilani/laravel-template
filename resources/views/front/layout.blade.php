@@ -25,12 +25,11 @@
 
     <!-- CSS
     ================================================== -->
-    {{--<link rel="stylesheet" href="/css/base.css">--}}
-    {{--<link rel="stylesheet" href="/css/vendor.css">--}}
-    {{--<link rel="stylesheet" href="/css/main.css">--}}
-    {{--<link rel="stylesheet" href="/css/templateStyle.css">--}}
-    <link rel="stylesheet" href="/css/app.css">
-    {{--<link rel="stylesheet" href="/css/style.css">--}}
+    {{--<link rel="stylesheet" href="public/css/base.css">--}}
+    {{--<link rel="stylesheet" href="public/css/vendor.css">--}}
+    {{--<link rel="stylesheet" href="public/css/main.css">--}}
+    {{--<link rel="stylesheet" href="public/css/templateStyle.css">--}}
+    <link rel="stylesheet" href="public/css/app.css">
     @yield('css')
 
     <style>
@@ -72,9 +71,9 @@
 <!-- Java Script
 ================================================== -->
 <script src="https://code.jquery.com/jquery-3.2.0.min.js"></script>
-<script src="/js/plugins.js"></script>
-<script src="/js/main.js"></script>
-<script src="/js/app.js"></script>
+<script src="public/js/plugins.js"></script>
+<script src="public/js/main.js"></script>
+<script src="public/js/app.js"></script>
 <script>
     $(function () {
         $('#logout').click(function (e) {

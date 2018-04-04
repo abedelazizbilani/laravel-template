@@ -17,8 +17,8 @@ class SendEmail extends BaseJob
     {
         //specify the sent from
         $this->params['from'] = [
-            'name'  => env('MAIL_FROM_NAME', 'IdeaToLife Testing'),
-            'email' => env('MAIL_FROM_ADDRESS', 'youssef.jradeh@ideatolife.me')
+            'name'  => env('MAIL_FROM_NAME', 'Testing'),
+            'email' => env('MAIL_FROM_ADDRESS', 'abed.bilani@gmail.com')
         ];
 
         //if we are notifying the site owner

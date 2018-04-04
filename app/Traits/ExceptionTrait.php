@@ -1,11 +1,6 @@
 <?php
 
-/*
- * This file is part of the IdeaToLife package.
- *
- * (c) Youssef Jradeh <youssef.jradeh@ideatolife.me>
- *
- */
+
 
 namespace App\Traits;
 
@@ -22,7 +17,7 @@ trait ExceptionTrait
     /**
      * Description: The following method is used to throw the respective validation exception
      *
-     * @author Shuja Ahmed - I2L
+     * @author
      *
      * @param null   $validator
      * @param string $message
@@ -46,7 +41,7 @@ trait ExceptionTrait
     /**
      * Description: The following method is used to throw the respective response exception
      *
-     * @author Youssef - I2L
+     * @author
      *
      * @param null $message
      * @param null $data
@@ -64,7 +59,7 @@ trait ExceptionTrait
     /**
      * Description: The following method is used to throw the respective for Invalid JSON Request
      *
-     * @author Youssef - I2L
+     * @author
      *
      * @param null $message
      * @param null $data
@@ -82,7 +77,7 @@ trait ExceptionTrait
     /**
      * Description: The following method is used to throw the respective for Invalid device Access
      *
-     * @author Youssef - I2L
+     * @author
      *
      * @param null $message
      * @param null $data

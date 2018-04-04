@@ -10,13 +10,13 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- Theme style -->
-    <link rel="stylesheet" href="/adminlte/css/AdminLTE.min.css">
+    <link rel="stylesheet" href="/laravel-template/public/adminlte/css/AdminLTE.min.css">
     <!-- Date Picker -->
-    <link rel="stylesheet" href="/css/bootstrap-datepicker.min.css">
+    <link rel="stylesheet" href="/laravel-template/public/css/bootstrap-datepicker.min.css">
     <!-- AdminLTE Skins. -->
-    <link rel="stylesheet" href="/adminlte/css/skins/skin-blue.min.css">
+    <link rel="stylesheet" href="/laravel-template/public/adminlte/css/skins/skin-blue.min.css">
     <!-- Bootstrap 4.0.0 -->
-    <link rel="stylesheet" href="/css/app.css">
+    <link rel="stylesheet" href="/laravel-template/public/css/app.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/r/bs-3.3.5/jq-2.1.4,dt-1.10.8/datatables.min.css"/>
 @yield('css')
 
@@ -246,10 +246,10 @@ desired effect
 <script src="https://code.jquery.com/jquery-3.2.0.min.js"></script>
 
 <!-- Bootstrap 4.4.0 -->
-<script src="/js/app.js"></script>
+<script src="/laravel-template/public/js/app.js"></script>
 
 <!-- Date Picker -->
-<script src="/js/bootstrap-datepicker.min.js"></script>
+<script src="/laravel-template/public/js/bootstrap-datepicker.min.js"></script>
 
 <!-- Sweet Alert -->
 <script src="//cdn.jsdelivr.net/sweetalert2/6.3.8/sweetalert2.min.js"></script>
@@ -259,7 +259,7 @@ desired effect
 @yield('js')
 
 <!-- AdminLTE App -->
-<script src="/adminlte/js/app.min.js"></script>
+<script src="/laravel-template/public/adminlte/js/app.min.js"></script>
 
 
 {{--we will use this in case fetching data --}}

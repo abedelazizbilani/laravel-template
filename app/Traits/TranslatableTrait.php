@@ -680,11 +680,6 @@ trait TranslatableTrait
         $this->load('translations');
     }
 
-    /*
-     * IdeaToLife Customisation
-     * @author Youssef Jradeh <youssef.jradeh@ideatolife.me>
-     */
-
     /**
      * Order by field from translation table instead of local table
      *

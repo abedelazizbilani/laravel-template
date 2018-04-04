@@ -48,7 +48,7 @@
 @endsection
 
 @section('js')
-    <script src="/adminlte/js/back.js"></script>
+    <script src="/laravel-template/public/adminlte/js/back.js"></script>
     <script>
 
         var role = (function () {

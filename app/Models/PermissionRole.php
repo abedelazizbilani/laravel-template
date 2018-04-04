@@ -3,7 +3,7 @@
 /**
  * PermissionRole
  *
- * (c) Abed Bilani <abed.bilani@ideatolife.me>
+ * (c) Abed Bilani <abed.bilani@gmail.com>
  *
  */
 

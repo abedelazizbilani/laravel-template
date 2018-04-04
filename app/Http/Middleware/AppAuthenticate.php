@@ -1,13 +1,9 @@
 <?php
 
 /*
- * This file is part of the IdeaToLife package.
  * This is a middleware that ensure following things:
  * 1. First the incoming request has a content-type of JSON.
  * 2. Secondly the given json in the request has a valid json structure
- *
- * (c) Youssef Jradeh <youssef.jradeh@ideatolife.me>
- * (c) Shuja Ahmed <shuja.ahmed@ideatolife.me>
  *
  */
 

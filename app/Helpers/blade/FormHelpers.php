@@ -106,7 +106,6 @@ function IFInput($type, $name, $value = null, $options = [])
     $merge = compact('type', 'value', 'id');
     $options = array_merge($options, $merge);
 
-    //ideatolife
     $options['class'] = !empty($options['class']) ? "form-control " . $options['class'] : "form-control";
 
     if (empty($options['id'])) {
