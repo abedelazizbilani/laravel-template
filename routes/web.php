@@ -12,7 +12,7 @@
 */
 
 Route::name('home')->get('/', function () {
-    return redirect('login');
+    return view('front.welcome');
 });
 
 /*
@@ -74,14 +74,6 @@ Route::prefix('dashboard')->namespace('Back')->group(function () {
     Route::resource('profiles', 'ProfileController', [
             'only' => [
                 'edit', 'update'
-            ]
-        ]
-    );
-
-    //FeedBacks
-    Route::resource('feedbacks', 'FeedBackController', [
-            'middleware' => ['permission:manage_feedbacks'], 'only' => [
-                'index', 'destroy'
             ]
         ]
     );

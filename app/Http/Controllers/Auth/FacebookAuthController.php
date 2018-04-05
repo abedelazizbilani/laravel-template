@@ -20,13 +20,13 @@ class FacebookAuthController extends BaseController
 
     /**
      * Return a callback method from facebook api.
-     *
+     * @param FacebookUserService $service
      * @return callback URL from facebook
      */
     public function callback(FacebookUserService $service)
     {
         $user = $service->createOrGetUser(SocialLogin::driver('facebook')->user());
         auth()->login($user);
-        return redirect()->to('/dashboard');
+        return redirect()->to('/');
     }
 }

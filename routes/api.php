@@ -24,6 +24,6 @@ Route::post('update-token', 'Device\TokenController@update');
 //
 Route::group(
     ['middleware' => 'jwt.auth'], function () {
-    //TODO
+    Route::get('users','Api\UserController@index');
 });
 

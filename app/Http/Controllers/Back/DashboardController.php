@@ -18,6 +18,10 @@ class DashboardController extends BaseController
      */
     public function index()
     {
+
+        if (auth()->user()->hasRole('external')){
+            return redirect()->to('/');
+        }
         $pannels = [];
 
         foreach (config('pannels') as $pannel) {

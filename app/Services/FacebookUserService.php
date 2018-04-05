@@ -8,6 +8,7 @@
 
 namespace App\Services;
 
+use App\Jobs\SendEmail;
 use App\Models\FacebookUser;
 use App\Models\Profile;
 use App\Models\Role;
@@ -24,7 +25,6 @@ class FacebookUserService
         if ($account) {
             return $account->user;
         } else {
-
             $account = new FacebookUser([
                 'provider_user_id' => $providerUser->getId(),
                 'provider'         => 'facebook'
@@ -50,11 +50,29 @@ class FacebookUserService
                 );
                 $role = Role::find(2);
                 $user->attachRole($role);
+
+                $this->sendEmail($user);
             }
 
             $account->user()->associate($user);
             $account->save();
             return $user;
         }
+    }
+
+    /**
+     * @param $user
+     */
+    public function sendEmail($user)
+    {
+        $data = [
+            'template' => 'auth.passwords.reset-password',
+            'subject'  => env('MAIL_FROM_NAME') . ', Change Password and Activate Account',
+            'to'       => ['name' => $user->name, 'email' => $user->email],
+            'username' => $user->username,
+            'code'     => $user->password_change_code,
+            'link'     => '/password/confirm',
+        ];
+        dispatch(new SendEmail($data));
     }
 }
