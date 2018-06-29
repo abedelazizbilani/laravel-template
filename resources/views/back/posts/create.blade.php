@@ -13,18 +13,25 @@
             @endif
         </div>
     </div>
-   {!! Form::open(['route' => 'posts.store', 'method' => 'POST']) !!}
-      <div class="box box-primary">
-           <div class="box-body">
-               <div class="row">
-                   <div class="col-md-4">
-                       @include ('back.posts.form')
-                   </div>
-               </div>
-           </div>
-       </div>
-       <div class="box-footer text-right">
-           {{ Form::submit('Submit') }}
-       </div>
-   {!! Form::close() !!}
+    {!! Form::open(['route' => 'posts.store', 'method' => 'POST']) !!}
+    <div class="box box-primary">
+        <div class="box-body">
+            <div class="row">
+                <div class="col-md-4">
+                    {{ Form::textField('title' , '', ['required']) }}
+                </div>
+            </div>
+            <div class="separator-15"></div>
+            <div class="row">
+                <div class="col-md-4">
+                    {{ Form::textareaField('body') }}
+                </div>
+            </div>
+            <div class="separator-15"></div>
+        </div>
+    </div>
+    <div class="box-footer text-right">
+        {{ Form::submitField('Submit') }}
+    </div>
+    {!! Form::close() !!}
 @endsection

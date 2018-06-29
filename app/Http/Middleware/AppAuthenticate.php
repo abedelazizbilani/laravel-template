@@ -19,7 +19,7 @@ class AppAuthenticate extends Authenticate
     use ExceptionTrait;
 
     public function authenticate(Request $request)
-    {exit;
+    {
         $this->checkForToken($request);
 
         try {

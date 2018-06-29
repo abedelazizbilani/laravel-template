@@ -19,4 +19,9 @@ class UserController extends BaseCrud
     {
         $this->model = new User();
     }
+
+//    public function index()
+//    {
+//        return $this->successData(User::all());
+//    }
 }

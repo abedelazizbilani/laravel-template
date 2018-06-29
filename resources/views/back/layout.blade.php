@@ -10,13 +10,13 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- Theme style -->
-    <link rel="stylesheet" href="/laravel-template/public/adminlte/css/AdminLTE.min.css">
+    <link rel="stylesheet" href="/public/adminlte/css/AdminLTE.min.css">
     <!-- Date Picker -->
-    <link rel="stylesheet" href="/laravel-template/public/css/bootstrap-datepicker.min.css">
+    <link rel="stylesheet" href="/public/css/bootstrap-datepicker.min.css">
     <!-- AdminLTE Skins. -->
-    <link rel="stylesheet" href="/laravel-template/public/adminlte/css/skins/skin-blue.min.css">
+    <link rel="stylesheet" href="/public/adminlte/css/skins/skin-blue.min.css">
     <!-- Bootstrap 4.0.0 -->
-    <link rel="stylesheet" href="/laravel-template/public/css/app.css">
+    <link rel="stylesheet" href="/public/css/app.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/r/bs-3.3.5/jq-2.1.4,dt-1.10.8/datatables.min.css"/>
 @yield('css')
 
@@ -49,7 +49,6 @@ desired effect
 -->
 <body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper" id="app">
-
     <!-- Main Header -->
     <header class="main-header">
 
@@ -106,14 +105,14 @@ desired effect
                         <!-- Menu Toggle Button -->
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                             <!-- The user image in the navbar-->
-                            @if(Auth::user()->profile()->first()->image)
-                                <img src="/{{ Auth::user()->profile()->first()->image }}" class="user-image">
+                            @if(auth()->user()->profile()->first()->image)
+                                <img src="/{{ auth()->user()->profile()->first()->image }}" class="user-image">
                             @else
                                 <img src="{{ Gravatar::get(auth()->user()->email) }}" class="user-image">
                             @endif
                         <!-- hidden-xs hides the username on small devices so only the image appears. -->
-                            @if(Auth::user()->profile()->first()->first_name)
-                                <span class="hidden-xs">{{ Auth::user()->profile()->first()->first_name }}</span>
+                            @if(auth()->user()->profile()->first()->first_name)
+                                <span class="hidden-xs">{{ auth()->user()->profile()->first()->first_name }}</span>
                             @else
                                 <span class="hidden-xs">{{ auth()->user()->name }}</span>
                             @endif
@@ -121,13 +120,13 @@ desired effect
                         <ul class="dropdown-menu">
                             <!-- The user image in the menu -->
                             <li class="user-header">
-                                @if(Auth::user()->profile()->first()->image)
-                                    <img src="/{{ Auth::user()->profile()->first()->image }}" class="img-circle">
+                                @if(auth()->user()->profile()->first()->image)
+                                    <img src="/{{ auth()->user()->profile()->first()->image }}" class="img-circle">
                                 @else
                                     <img src="{{ Gravatar::get(auth()->user()->email) }}" class="user-image">
                                 @endif
-                                @if(Auth::user()->profile()->first()->first_name)
-                                    <p>{{ Auth::user()->profile()->first()->first_name }}</p>
+                                @if(auth()->user()->profile()->first()->first_name)
+                                    <p>{{ auth()->user()->profile()->first()->first_name }}</p>
                                 @else
                                     <p>{{ auth()->user()->name }}</p>
                                 @endif
@@ -135,7 +134,7 @@ desired effect
                             <!-- Menu Footer-->
                             <li class="user-footer">
                                 <div class="pull-left">
-                                    <a id="profiles" href="{{ route('profiles.edit', [Auth::user()->id]) }}"
+                                    <a id="profiles" href="{{ route('profiles.edit', [auth()->user()->id]) }}"
                                        class="btn btn-default btn-flat">@lang('Profile')</a>
                                 </div>
                                 <div class="pull-right">
@@ -246,10 +245,10 @@ desired effect
 <script src="https://code.jquery.com/jquery-3.2.0.min.js"></script>
 
 <!-- Bootstrap 4.4.0 -->
-<script src="/laravel-template/public/js/app.js"></script>
+<script src="/public/js/app.js"></script>
 
 <!-- Date Picker -->
-<script src="/laravel-template/public/js/bootstrap-datepicker.min.js"></script>
+<script src="/public/js/bootstrap-datepicker.min.js"></script>
 
 <!-- Sweet Alert -->
 <script src="//cdn.jsdelivr.net/sweetalert2/6.3.8/sweetalert2.min.js"></script>
@@ -259,7 +258,7 @@ desired effect
 @yield('js')
 
 <!-- AdminLTE App -->
-<script src="/laravel-template/public/adminlte/js/app.min.js"></script>
+<script src="/public/adminlte/js/app.min.js"></script>
 
 
 {{--we will use this in case fetching data --}}

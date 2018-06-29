@@ -49,7 +49,7 @@
 @endsection
 
 @section('js')
-    <script src="/laravel-template/public/adminlte/js/back.js"></script>
+    <script src="/public/adminlte/js/back.js"></script>
     <script>
         var post = (function () {
             var url = '{{ route('posts.index') }}'

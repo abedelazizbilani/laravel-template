@@ -19,31 +19,32 @@
         <div class="box-body">
             <div class="row">
                 <div class="col-md-4">
-                    {{ Form::text('name','',['required', 'placeholder'=>'Name']) }}
+                    {{ Form::textField('name', '', ['required']) }}
                 </div>
                 <div class="col-md-4">
-                    {{ Form::text('username','',['required', 'placeholder'=>'Username']) }}
+                    {{Form::label('Email')}}
+                    {{ Form::email('email', '', ['required' ,'class'=> 'form-control']) }}
+                </div>
+                <div class="col-md-4">
+                    {{ Form::textField('phone' , '', ['required']) }}
                 </div>
             </div>
+            <div class="separator-15"></div>
             <div class="row">
                 <div class="col-md-4">
-                    {{ Form::text('email','',['required', 'placeholder'=>'Email']) }}
+                    {{ Form::passwordField('password', ['required']) }}
                 </div>
                 <div class="col-md-4">
-                    {{ Form::password('password',['required', 'placeholder'=>'Password']) }}
+                    {{ Form::passwordField('password_confirmation', ['required'], 'Confirm password') }}
                 </div>
-            </div>
-            <div class="row">
                 <div class="col-md-4">
-                    {{ Form::select('roles[]',$roles, null, ['multiple']) }}
+                    {{ Form::selectField('roles[]', $roles, null, ['id'=>'roles'], 'roles') }}
                 </div>
             </div>
-            <div class="checkbox">
-                {{ Form::checkbox('active',1) }}
-            </div>
+            <div class="separator-15"></div>
         </div>
         <div class="box-footer text-right">
-            {{ Form::submit('Submit') }}
+            {{ Form::submitField('Submit') }}
         </div>
     </div>
     {!! Form::close() !!}

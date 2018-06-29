@@ -13,26 +13,22 @@
     {!! Form::open(['route' => ['posts.update', $post->id], 'method' => 'PUT']) !!}
     <div class="box box-primary">
         <div class="box-body">
-            <div class="form-group {{ $errors->has('title') ? 'has-error' : ''}}">
-                <label for="title" class="col-md-4 control-label">{{ 'Title' }}</label>
+            <div class="row">
                 <div class="col-md-4">
-                    <input class="form-control" name="title" type="text" id="title" value="{{ $post->title or ''}}">
-                    {!! $errors->first('title', '<p class="help-block">:message</p>') !!}
+                    {{ Form::textField('title' , $post->title , ['required']) }}
                 </div>
             </div>
-            <div class="form-group {{ $errors->has('body') ? 'has-error' : ''}}">
-                <label for="body" class="col-md-4 control-label">{{ 'Body' }}</label>
+            <div class="row">
                 <div class="col-md-4">
-                    <textarea class="form-control" rows="5" name="body" type="textarea"
-                              id="body">{{ $post->body or ''}}</textarea>
-                    {!! $errors->first('body', '<p class="help-block">:message</p>') !!}
+                    {{ Form::textareaField('body',$post->body) }}
                 </div>
             </div>
+            <div class="separator-15"></div>
         </div>
         <!-- /.box-body -->
-        <div class="box-footer text-right">
-            {{ Form::submit('Update') }}
-        </div>
+    </div>
+    <div class="box-footer text-right">
+        {{ Form::submitField('Update') }}
     </div>
     {!! Form::close() !!}
 @endsection

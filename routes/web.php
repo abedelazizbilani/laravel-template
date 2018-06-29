@@ -48,50 +48,52 @@ Route::get('/callback', 'Auth\FacebookAuthController@callback');
 |--------------------------------------------------------------------------|
 */
 
-Route::prefix('dashboard')->namespace('Back')->group(function () {
+Route::middleware(['auth'])->prefix('dashboard')->namespace('Back')->group(function () {
 
     //Dashboard
     Route::name('dashboard')->get('/', 'DashboardController@index');
 
     // Users
     Route::name('users.valid')->put('users/valid/{user}', 'UserController@updateValid');
-    Route::resource('users', 'UserController', [
-            'middleware' => ['permission:manage_users'], 'only' => [
-                'index', 'edit', 'update', 'destroy', 'create', 'store'
-            ]
-        ]
+    Route::resource(
+        'users', 'UserController', [
+                   'middleware' => ['permission:manage_users'], 'only' => [
+                       'index', 'edit', 'update', 'create', 'store' , 'destroy'
+                   ]
+               ]
     );
+
 
     //Roles
     Route::resource('roles', 'RoleController', [
-            'middleware' => ['permission:manage_roles'], 'only' => [
-                'index', 'edit', 'update', 'destroy', 'create', 'store'
-            ]
-        ]
+                               'middleware' => ['permission:manage_roles'], 'only' => [
+                                   'index', 'edit', 'update', 'destroy', 'create', 'store'
+                               ]
+                           ]
     );
 
     //Profiles
     Route::resource('profiles', 'ProfileController', [
-            'only' => [
-                'edit', 'update'
-            ]
-        ]
+                                  'only' => [
+                                      'edit', 'update'
+                                  ]
+                              ]
     );
 
     //Devices
     Route::resource('devices', 'DeviceController', [
-            'only' => [
-                'index'
-            ]
-        ]
+                                 'only' => [
+                                     'index'
+                                 ]
+                             ]
     );
 
     //audit
     Route::resource('audit', 'DeviceController', [
-            'only' => [
-                'index'
-            ]
-        ]
+                               'only' => [
+                                   'index'
+                               ]
+                           ]
     );
     //notifications
     Route::resource('notifications', 'DeviceController');

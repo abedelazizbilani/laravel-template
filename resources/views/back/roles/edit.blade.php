@@ -36,15 +36,15 @@
                     <div class="box-body">
                         <div class="row">
                             <div class="col-md-4">
-                                {{ Form::text('name',$role->name,['required']) }}
+                                {{ Form::textField('name',$role->name,['required']) }}
                             </div>
                             <div class="col-md-4">
-                                {{ Form::text('display_name',$role->display_name,['required']) }}
+                                {{ Form::textField('display_name',$role->display_name,['required']) }}
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-4">
-                                {{ Form::text('description',$role->description,[]) }}
+                                {{ Form::textField('description',$role->description,[]) }}
                             </div>
                         </div>
                     </div>
@@ -88,6 +88,7 @@
             </div>
             <div class="box-footer text-right">
                 <button type="submit" class="btn btn-primary">@lang('Submit')</button>
+                {{Form::submitField('Submit')}}
             </div>
         </form>
     </div>

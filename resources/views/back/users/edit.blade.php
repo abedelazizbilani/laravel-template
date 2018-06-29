@@ -23,28 +23,28 @@
         <div class="box-body">
             <div class="row">
                 <div class="col-md-4">
-                    {{ Form::text('name',$user->name,['required']) }}
+                    {{ Form::textField('name',$user->name,['required']) }}
                 </div>
                 <div class="col-md-4">
-                    {{ Form::text('username',$user->username,['required']) }}
+                    {{ Form::textField('username',$user->username,['required']) }}
                 </div>
                 <div class="col-md-4">
-                    {{ Form::text('email',$user->email,['required']) }}
+                    {{ Form::textField('email',$user->email,['required']) }}
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-4">
-                    {{ Form::select('roles[]',$roles, $user->roles, ['multiple']) }}
+                    {{ Form::selectField('roles',$roles, $user->roles, ['multiple']) }}
                 </div>
             </div>
-            <div class="checkbox">
-                {{ Form::checkbox('active',1 , $user->active) }}
+            <div class="col-md-4">
+                {{ Form::booleanField('active',1 , $user->active) }}
             </div>
             <a href="{{ route('password.request') }}">@lang('Reset password')</a>
         </div>
         <!-- /.box-body -->
         <div class="box-footer text-right">
-            {{ Form::submit('Submit') }}
+            {{ Form::submitField('Submit') }}
         </div>
     </div>
     {!! Form::close() !!}
